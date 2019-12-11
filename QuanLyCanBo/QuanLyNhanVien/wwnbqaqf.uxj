@@ -152,25 +152,17 @@ namespace QuanLyNhanVien
             return true;
         }
 
-        public DataTable FindCanBo(string nv)
+        public DataTable FindCanBo(string sv)
         {
-            string sql = "SELECT * FROM Can_Bo WHERE HoTen like N'%" + nv + "%' OR MaCanBo like N'%" + nv + "%'";
-            //B2: tạo một kết nói đến sql
-            SqlConnection con = cndb.getConnect();
-            //B3: khởi tạo đối tượng của lớp SqlDataAdapter
-            da = new SqlDataAdapter(sql, con);
-            //B4: mở kết nói
+            string sql = "usp_FindCanBo";    
+            SqlConnection con = cndb.getConnect(); 
+            da = new SqlDataAdapter(sql, con);        
             con.Open();
-            //B5:mỡ dữ liệu từ sqldatAdapter vào datatable 
             DataTable dt = new DataTable();
             da.Fill(dt);
-            //B6: đóng két nói
             con.Close();
             return dt;
         }
-        
-            
-        
 
 
         // phuong thuc lay het du lieu nhan vien

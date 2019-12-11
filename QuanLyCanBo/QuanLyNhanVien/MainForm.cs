@@ -206,5 +206,31 @@ namespace QuanLyNhanVien
 
             }
         }
+
+        private void dgvnhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txttimkiem_TextChanged(object sender, EventArgs e)
+        {
+            string value = txttimkiem.Text;
+            if(!string.IsNullOrEmpty(value))
+            {
+                DataTable dt = clsbill.FindCanBo(value);
+                dgvnhanvien.DataSource = dt;
+            }
+            else
+            {
+                ShowAllNhanVien();
+            }
+        }
+
+        private void traCuuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TraCuu tc = new TraCuu();
+            tc.Show();
+        }
 	}
 }

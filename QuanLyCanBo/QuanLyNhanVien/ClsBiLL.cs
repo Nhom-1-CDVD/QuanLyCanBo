@@ -36,5 +36,25 @@ namespace QuanLyNhanVien
         {
             return clsdal.DeleteCanBo(nv);
         }
+        public DataTable getAllUser()
+        {
+            return clsdal.getAllUser();
+        }
+        public bool AddUser(ClsUser us)
+        {
+            return clsdal.AddUser(us);
+        }
+        public bool UpdateUser(ClsUser us)
+        {
+            return clsdal.UpdateUser(us);
+        }
+        public bool DeleteUser(ClsUser us)
+        {
+            return clsdal.DeleteUser(us);
+        }
+        public DataTable FindCanBo(string nv)
+        {
+            return clsdal.FindCanBo(nv);
+        }
     }
 }

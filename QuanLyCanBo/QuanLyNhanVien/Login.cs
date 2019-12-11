@@ -70,10 +70,10 @@ namespace QuanLyNhanVien
                 {
                     MessageBox.Show("Đăng Nhập Thành Công:", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Hide();
-//                    MainForm mf = new MainForm();
-//                    mf.Show();
-DanhSachPhuCap dspc = new DanhSachPhuCap();
-dspc.Show();
+                    MainForm mf = new MainForm();
+                   mf.Show();
+//DanhSachPhuCap dspc = new DanhSachPhuCap();
+//dspc.Show();
                 }
                 else
                 {

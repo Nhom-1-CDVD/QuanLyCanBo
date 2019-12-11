@@ -87,5 +87,21 @@ namespace QuanLyNhanVien
         	SqlDataReader DR = clsdal.getTenCanBo();
         	return DR;
         }
+        public DataTable FindGIoiTinh(ClsNhanVien nv)
+        {
+            return clsdal.FindGIoiTinh(nv);
+        }
+        public DataTable FindChuyenMon(ClsNhanVien nv)
+        {
+            return clsdal.FindChuyenMon(nv);
+        }
+        public DataTable FindLoaiLaoDong(ClsNhanVien nv)
+        {
+            return clsdal.FindLoaiLaoDong(nv);
+        }
+        public DataTable XemTongLuong()
+        {
+            return clsdal.XemTongLuong();
+        }
     }
 }

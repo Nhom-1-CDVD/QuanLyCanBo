@@ -346,5 +346,68 @@ namespace QuanLyNhanVien
         	SqlDataReader DR = cmd.ExecuteReader();
         	return DR;
         }
+
+        // phuong thuc tim kiem gioi tinh 
+        public DataTable FindGIoiTinh(ClsNhanVien nv)
+        {
+            string sql = "usp_getgioitinh";
+            SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@gioitinh", SqlDbType.NVarChar).Value = nv.GioiTinh;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
+        // phuong thuc tim kiem chuyen mon 
+        public DataTable FindChuyenMon(ClsNhanVien nv)
+        {
+            string sql = "usp_Select_CanBo_ChuyenMon";
+            SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@chuyenmon", SqlDbType.NVarChar).Value = nv.ChuyenMon;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
+        // phuong thuc tim kiem lao động
+        public DataTable FindLoaiLaoDong(ClsNhanVien nv)
+        {
+            string sql = "usp_Select_CanBo_Gioi";
+            SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@xeploai", SqlDbType.NVarChar).Value = nv.XepLoai;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
+        // phuong thuc xem tong luong can bo
+        public DataTable XemTongLuong()
+        {
+            string sql = "usp_Tinh_Tong_Thu_Nhap";
+            SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
     }
 }

@@ -103,5 +103,24 @@ namespace QuanLyNhanVien
         {
             return clsdal.XemTongLuong();
         }
+        
+        public SqlDataReader getTenPhuCap(){
+        	return clsdal.getTenPhuCap();
+        }
+        public SqlDataReader getCanBoTen(string macanbo){
+        	return clsdal.getCanBoTen(macanbo);
+        }
+        public SqlDataReader getTTPhuCap(string maPhuCap){
+        	return clsdal.getTTPhuCap(maPhuCap);
+        }
+        public DataTable getAllDSPC(){
+        	return clsdal.getAllDanhSachPhuCap();
+        }
+        public bool InsertDSPC(string maCanBo, string hoTen, string maPhuCap, string tenPhuCap){
+        	return clsdal.insertDanhSachPhuCap(maCanBo,hoTen,maPhuCap,tenPhuCap);
+        }
+        public bool XoaDSPC(string maCanBo, string maPhuCap){
+        	return clsdal.XoaDSPC(maCanBo,maPhuCap);
+        }
     }
 }

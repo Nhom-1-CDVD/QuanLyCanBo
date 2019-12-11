@@ -43,33 +43,42 @@ namespace QuanLyNhanVien
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnXoa = new System.Windows.Forms.Button();
 			this.dgvDanhSachPhuCap = new System.Windows.Forms.DataGridView();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtTenCanBo = new System.Windows.Forms.TextBox();
+			this.txtTenPhuCap = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.txtSoTienPhuCap = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhuCap)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnThem
 			// 
-			this.btnThem.Location = new System.Drawing.Point(592, 32);
+			this.btnThem.Location = new System.Drawing.Point(592, 23);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.Size = new System.Drawing.Size(75, 23);
 			this.btnThem.TabIndex = 0;
 			this.btnThem.Text = "Them";
 			this.btnThem.UseVisualStyleBackColor = true;
+			this.btnThem.Click += new System.EventHandler(this.BtnThemClick);
 			// 
 			// label1
 			// 
-			this.label1.Location = new System.Drawing.Point(29, 23);
+			this.label1.Location = new System.Drawing.Point(29, 20);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 23);
+			this.label1.Size = new System.Drawing.Size(66, 23);
 			this.label1.TabIndex = 1;
-			this.label1.Text = "Can Bo";
+			this.label1.Text = "Ma Can Bo";
 			// 
 			// cbCanBo
 			// 
 			this.cbCanBo.FormattingEnabled = true;
-			this.cbCanBo.Location = new System.Drawing.Point(147, 23);
+			this.cbCanBo.Location = new System.Drawing.Point(147, 20);
 			this.cbCanBo.Name = "cbCanBo";
 			this.cbCanBo.Size = new System.Drawing.Size(121, 21);
 			this.cbCanBo.TabIndex = 2;
+			this.cbCanBo.SelectedIndexChanged += new System.EventHandler(this.CbCanBoSelectedIndexChanged);
+			this.cbCanBo.TextChanged += new System.EventHandler(this.CbCanBoTextChanged);
 			// 
 			// cbPhuCap
 			// 
@@ -78,6 +87,8 @@ namespace QuanLyNhanVien
 			this.cbPhuCap.Name = "cbPhuCap";
 			this.cbPhuCap.Size = new System.Drawing.Size(121, 21);
 			this.cbPhuCap.TabIndex = 4;
+			this.cbPhuCap.SelectedIndexChanged += new System.EventHandler(this.CbPhuCapSelectedIndexChanged);
+			this.cbPhuCap.TextChanged += new System.EventHandler(this.CbPhuCapTextChanged);
 			// 
 			// label2
 			// 
@@ -89,12 +100,13 @@ namespace QuanLyNhanVien
 			// 
 			// btnXoa
 			// 
-			this.btnXoa.Location = new System.Drawing.Point(592, 78);
+			this.btnXoa.Location = new System.Drawing.Point(592, 65);
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(75, 23);
 			this.btnXoa.TabIndex = 5;
 			this.btnXoa.Text = "Xoa";
 			this.btnXoa.UseVisualStyleBackColor = true;
+			this.btnXoa.Click += new System.EventHandler(this.BtnXoaClick);
 			// 
 			// dgvDanhSachPhuCap
 			// 
@@ -104,11 +116,62 @@ namespace QuanLyNhanVien
 			this.dgvDanhSachPhuCap.Size = new System.Drawing.Size(688, 150);
 			this.dgvDanhSachPhuCap.TabIndex = 6;
 			// 
+			// label3
+			// 
+			this.label3.Location = new System.Drawing.Point(313, 23);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(75, 23);
+			this.label3.TabIndex = 7;
+			this.label3.Text = "Ten Can Bo";
+			// 
+			// txtTenCanBo
+			// 
+			this.txtTenCanBo.Location = new System.Drawing.Point(405, 23);
+			this.txtTenCanBo.Name = "txtTenCanBo";
+			this.txtTenCanBo.Size = new System.Drawing.Size(121, 20);
+			this.txtTenCanBo.TabIndex = 8;
+			// 
+			// txtTenPhuCap
+			// 
+			this.txtTenPhuCap.Location = new System.Drawing.Point(147, 107);
+			this.txtTenPhuCap.Name = "txtTenPhuCap";
+			this.txtTenPhuCap.Size = new System.Drawing.Size(121, 20);
+			this.txtTenPhuCap.TabIndex = 10;
+			// 
+			// label4
+			// 
+			this.label4.Location = new System.Drawing.Point(29, 107);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(75, 23);
+			this.label4.TabIndex = 9;
+			this.label4.Text = "Ten Phu Cap";
+			// 
+			// txtSoTienPhuCap
+			// 
+			this.txtSoTienPhuCap.Location = new System.Drawing.Point(405, 104);
+			this.txtSoTienPhuCap.Name = "txtSoTienPhuCap";
+			this.txtSoTienPhuCap.Size = new System.Drawing.Size(121, 20);
+			this.txtSoTienPhuCap.TabIndex = 12;
+			// 
+			// label5
+			// 
+			this.label5.Location = new System.Drawing.Point(313, 104);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(99, 23);
+			this.label5.TabIndex = 11;
+			this.label5.Text = "So Tien Phu Cap";
+			// 
 			// DanhSachPhuCap
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(788, 262);
+			this.Controls.Add(this.txtSoTienPhuCap);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.txtTenPhuCap);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.txtTenCanBo);
+			this.Controls.Add(this.label3);
 			this.Controls.Add(this.dgvDanhSachPhuCap);
 			this.Controls.Add(this.btnXoa);
 			this.Controls.Add(this.cbPhuCap);
@@ -121,7 +184,14 @@ namespace QuanLyNhanVien
 			this.Load += new System.EventHandler(this.DanhSachPhuCapLoad);
 			((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhuCap)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.TextBox txtSoTienPhuCap;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox txtTenPhuCap;
+		private System.Windows.Forms.TextBox txtTenCanBo;
+		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.DataGridView dgvDanhSachPhuCap;
 		private System.Windows.Forms.Button btnXoa;
 		private System.Windows.Forms.Label label2;

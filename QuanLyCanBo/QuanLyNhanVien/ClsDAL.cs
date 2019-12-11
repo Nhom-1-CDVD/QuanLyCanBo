@@ -337,9 +337,18 @@ namespace QuanLyNhanVien
             
             return true;
         }
-        
+        // ten can bo
         public SqlDataReader getTenCanBo(){
         	string Sql = "select MaCanBo, HoTen from Can_Bo";
+        	SqlConnection con = cndb.getConnect();
+        	con.Open();
+        	SqlCommand cmd = new SqlCommand(Sql, con);
+        	SqlDataReader DR = cmd.ExecuteReader();
+        	return DR;
+        }
+        // lay ten phu cap
+        public SqlDataReader getTenPhuCap(){
+        	string Sql = "select MaPhuCap From PhuCap";
         	SqlConnection con = cndb.getConnect();
         	con.Open();
         	SqlCommand cmd = new SqlCommand(Sql, con);
@@ -408,6 +417,64 @@ namespace QuanLyNhanVien
             da.Fill(dt);
             con.Close();
             return dt;
+        }
+        
+        public SqlDataReader getCanBoTen(string macanbo){
+        	string sql = "Select HoTen From Can_Bo where MaCanBo='"+ macanbo+"'";
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            SqlDataReader DR = cmd.ExecuteReader();
+        	return DR;
+        }
+        
+        public SqlDataReader getTTPhuCap(String maPhuCap){
+        	string sql = "Select TenPhuCap, SoTienPhuCap From PhuCap where MaPhuCap='"+ maPhuCap+"'";
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            SqlDataReader DR = cmd.ExecuteReader();
+        	return DR;
+        }
+        public DataTable getAllDanhSachPhuCap(){
+        	string sql = "Select * From DanhSachPhuCap";
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public bool insertDanhSachPhuCap(string maCanBo, string hoTen, string maPhuCap, string tenPhuCap){
+        	string sql = "usp_Insert_DSPC";
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@macanbo", SqlDbType.NVarChar).Value = maCanBo;
+            cmd.Parameters.Add("@hoten", SqlDbType.NVarChar).Value = tenPhuCap;
+            cmd.Parameters.Add("@maphucap", SqlDbType.NChar).Value = maPhuCap;
+            cmd.Parameters.Add("@tenphucap", SqlDbType.NVarChar).Value = tenPhuCap;
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
+        }
+        public bool XoaDSPC(string maCanBo, string maPhuCap){
+        	string sql = "DELETE From DanhSachCanBo Where MaCanBo='"+maCanBo+"' and MaPhuCap ='"maPhuCap+"'";
+        	try{
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        	}
+        	catch{
+        		return false;
+        	}
+        	return true
         }
     }
 }

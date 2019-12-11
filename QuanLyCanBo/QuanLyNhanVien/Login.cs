@@ -72,8 +72,8 @@ namespace QuanLyNhanVien
                     this.Hide();
                     MainForm mf = new MainForm();
                    mf.Show();
-//DanhSachPhuCap dspc = new DanhSachPhuCap();
-//dspc.Show();
+DanhSachPhuCap dspc = new DanhSachPhuCap();
+dspc.Show();
                 }
                 else
                 {

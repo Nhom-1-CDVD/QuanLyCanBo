@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 namespace QuanLyNhanVien
 {
     class ClsDAL
@@ -267,6 +268,83 @@ namespace QuanLyNhanVien
                 return false;
             }
             return true;
+        }
+        
+        public DataTable getAllPhuCap(){
+        	string sql ="usp_Get_All_PhuCap";
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public bool addPhuCap(int maPhuCap, string tenPhuCap, double tienPhuCap){
+        	string sql ="usp_Add_PhuCap";
+        	SqlConnection con = cndb.getConnect();
+        	try{
+        		con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@maphucap", SqlDbType.Int).Value = maPhuCap;
+            cmd.Parameters.Add("@tenphucap", SqlDbType.NVarChar).Value = tenPhuCap;
+            cmd.Parameters.Add("@sotienphucap", SqlDbType.Money).Value = tienPhuCap;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        	}
+        	catch{
+        		return false;
+        	}
+            
+            return true;
+        }
+        public bool delectPhuCap(int maPhuCap){
+        	string sql ="usp_Delete_PhuCap";
+        	SqlConnection con = cndb.getConnect();
+        	try{
+        		con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@maphucap", SqlDbType.Int).Value = maPhuCap;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        	}
+        	catch{
+        		return false;
+        	}
+            
+            return true;
+        }
+        public bool updatePhuCap(int maPhuCap, string tenPhuCap, double tienPhuCap){
+        	string sql ="usp_Update_PhuCap";
+        	SqlConnection con = cndb.getConnect();
+        	try{
+        		con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@maphucap", SqlDbType.Int).Value = maPhuCap;
+            cmd.Parameters.Add("@tenphucap", SqlDbType.NVarChar).Value = tenPhuCap;
+            cmd.Parameters.Add("@sotienphucap", SqlDbType.Money).Value = tienPhuCap;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        	}
+        	catch{
+        		return false;
+        	}
+            
+            return true;
+        }
+        
+        public SqlDataReader getTenCanBo(){
+        	string Sql = "select MaCanBo, HoTen from Can_Bo";
+        	SqlConnection con = cndb.getConnect();
+        	con.Open();
+        	SqlCommand cmd = new SqlCommand(Sql, con);
+        	SqlDataReader DR = cmd.ExecuteReader();
+        	return DR;
         }
     }
 }

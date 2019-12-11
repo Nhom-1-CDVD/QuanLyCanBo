@@ -52,6 +52,10 @@
     <Compile Include="ClsDAL.cs" />
     <Compile Include="ClsNhanVien.cs" />
     <Compile Include="ClsUser.cs" />
+    <Compile Include="DanhSachPhuCap.cs" />
+    <Compile Include="DanhSachPhuCap.Designer.cs">
+      <DependentUpon>DanhSachPhuCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +67,10 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhuCap.cs" />
+    <Compile Include="PhuCap.Designer.cs">
+      <DependentUpon>PhuCap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,11 +94,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DanhSachPhuCap.resx">
+      <DependentUpon>DanhSachPhuCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhuCap.resx">
+      <DependentUpon>PhuCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyUser.resx">
       <DependentUpon>QuanLyUser.cs</DependentUpon>

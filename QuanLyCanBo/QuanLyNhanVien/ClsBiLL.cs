@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 namespace QuanLyNhanVien
 {
     class ClsBiLL
@@ -55,6 +57,35 @@ namespace QuanLyNhanVien
         public DataTable FindCanBo(string nv)
         {
             return clsdal.FindCanBo(nv);
+        }
+        public DataTable GetAllPhuCap(){
+        	return clsdal.getAllPhuCap();
+        }
+        public bool addPhuCap(int maPhuCap, string tenPhuCap, double tienPhuCap){
+        	if(clsdal.addPhuCap(maPhuCap,tenPhuCap,tienPhuCap))
+        	{
+        		return true;
+        	}
+        	return false;
+        }
+        public bool deletePhuCap(int maPhuCap){
+        	if(clsdal.delectPhuCap(maPhuCap)){
+        		return true;
+        	}
+        	return false;
+        }
+        public bool updatePhuCap(int maPhuCap, string tenPhuCap, double tienPhuCap){
+        	if(clsdal.updatePhuCap(maPhuCap,tenPhuCap,tienPhuCap)){
+        	   	return true;
+        	   }
+        	else{
+        		return false;
+        	}
+        }
+        
+        public SqlDataReader getTenCanBo(){
+        	SqlDataReader DR = clsdal.getTenCanBo();
+        	return DR;
         }
     }
 }

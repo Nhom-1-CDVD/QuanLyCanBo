@@ -135,5 +135,11 @@ namespace QuanLyNhanVien
         public bool checkUser(string userName){
         	return clsdal.CheckUser(userName);
         }
+        public bool checkPC(int maphucap){
+        	return clsdal.checkPC(maphucap);
+        }
+        public bool checkDSPC(int maphucap, string macanbo){
+        	return clsdal.CheckDSPC(maphucap, macanbo);
+        }
     }
 }

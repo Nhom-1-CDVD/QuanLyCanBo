@@ -539,5 +539,36 @@ namespace QuanLyNhanVien
                 }    
                return false;
         }
+        public bool checkPC(int maphucap){
+        	string sql = "Select MaPhuCap from PhuCap where MaPhuCap = '" + maphucap+"'";
+        	SqlConnection con = cndb.getConnect(); 
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if(dt.Rows.Count>0)
+              {
+                  return true;
+              }    
+           	return false;
+        }
+        
+        public bool CheckDSPC(int maphucap, string MaCanBo){
+        	string sql = "Select MaCanBo from DanhSachPhuCap where MaPhuCap = '" + maphucap+"' and MaCanBo='"+MaCanBo+"'";
+        	SqlConnection con = cndb.getConnect(); 
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if(dt.Rows.Count>0)
+              {
+                  return true;
+              }    
+           	return false;
+        }
     }
 }

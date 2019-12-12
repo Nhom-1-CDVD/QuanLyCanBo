@@ -95,7 +95,12 @@ namespace QuanLyNhanVien
 		
 		void BtnThemClick(object sender, EventArgs e)
 		{
-			clsbill.InsertDSPC(cbCanBo.Text,txtTenCanBo.Text,cbPhuCap.Text,txtTenPhuCap.Text);
+			if(clsbill.checkDSPC(Int32.Parse(cbPhuCap.Text),cbCanBo.Text)){
+			   	MessageBox.Show("Cán bộ: "+ cbCanBo.Text+ " đã có phụ cấp này rồi");
+			   }
+			else{
+				clsbill.InsertDSPC(cbCanBo.Text,txtTenCanBo.Text,cbPhuCap.Text,txtTenPhuCap.Text);
+			}
 			showDSPC(dgvDanhSachPhuCap);
 		}
 		

@@ -65,9 +65,15 @@ namespace QuanLyNhanVien
 		void BtnThemClick(object sender, EventArgs e)
 		{
 			int maphucap = Int32.Parse(txtMaPhuCap.Text);
-			string tenphucap = txtTenPhuCap.Text;
-			double tienphucap = double.Parse(txtTienPhuCap.Text);
-			clsill.addPhuCap(maphucap,tenphucap,tienphucap);
+			if(clsill.checkPC(maphucap)){
+				MessageBox.Show("Mã phụ cấp đã tồn tại");
+			}
+			else{
+				string tenphucap = txtTenPhuCap.Text;
+				double tienphucap = double.Parse(txtTienPhuCap.Text);
+				clsill.addPhuCap(maphucap,tenphucap,tienphucap);
+				MessageBox.Show("Thêm Phụ Cấp thành công");
+			}
 			ShowPhuCap(dgvPhucap);
 		}
 		

@@ -67,6 +67,7 @@ namespace QuanLyNhanVien
 			this.txttimkiem = new System.Windows.Forms.TextBox();
 			this.btnGiam = new System.Windows.Forms.Button();
 			this.btnTang = new System.Windows.Forms.Button();
+			this.quảnLýPhụCấpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -289,7 +290,8 @@ namespace QuanLyNhanVien
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.quảnLýCánBộToolStripMenuItem,
 									this.quảnLýUserToolStripMenuItem,
-									this.traCuuToolStripMenuItem});
+									this.traCuuToolStripMenuItem,
+									this.quảnLýPhụCấpToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(882, 24);
@@ -364,6 +366,13 @@ namespace QuanLyNhanVien
 			this.btnTang.UseVisualStyleBackColor = true;
 			this.btnTang.Click += new System.EventHandler(this.BtnTangClick);
 			// 
+			// quảnLýPhụCấpToolStripMenuItem
+			// 
+			this.quảnLýPhụCấpToolStripMenuItem.Name = "quảnLýPhụCấpToolStripMenuItem";
+			this.quảnLýPhụCấpToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+			this.quảnLýPhụCấpToolStripMenuItem.Text = "Quản Lý Phụ Cấp";
+			this.quảnLýPhụCấpToolStripMenuItem.Click += new System.EventHandler(this.QuảnLýPhụCấpToolStripMenuItemClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,6 +416,7 @@ namespace QuanLyNhanVien
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem quảnLýPhụCấpToolStripMenuItem;
 		private System.Windows.Forms.Button btnTang;
 		private System.Windows.Forms.Button btnGiam;
 

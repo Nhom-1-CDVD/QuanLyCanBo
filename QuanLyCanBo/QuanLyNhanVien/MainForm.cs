@@ -246,5 +246,12 @@ namespace QuanLyNhanVien
 			dgvnhanvien.DataSource = dt;
 			dgvnhanvien.Refresh();
 		}
+		
+		void QuảnLýPhụCấpToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			this.Hide();
+			DanhSachPhuCap dspc = new DanhSachPhuCap();
+			dspc.Show();
+		}
 	}
 }

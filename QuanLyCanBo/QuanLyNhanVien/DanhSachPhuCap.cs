@@ -101,7 +101,7 @@ namespace QuanLyNhanVien
 		
 		void BtnXoaClick(object sender, EventArgs e)
 		{
-			if(clsbill.XoaDSPC(cbCanBo.Text,txtTenPhuCap.Text)){
+			if(clsbill.XoaDSPC(cbCanBo.Text,cbPhuCap.Text)){
 				showDSPC(dgvDanhSachPhuCap);
 				MessageBox.Show("Xoa Thanh Cong");
 			}
@@ -110,6 +110,31 @@ namespace QuanLyNhanVien
 			}
 			
 			
+		}
+		
+		void BtnThemPCClick(object sender, EventArgs e)
+		{
+			this.Hide();
+			PhuCap fmPC = new PhuCap();
+			fmPC.Show();
+		}
+		
+		void DgvDanhSachPhuCapCellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int index = e.RowIndex;
+            try
+            {
+                if (index >= 0)
+                {
+                    cbCanBo.Text= dgvDanhSachPhuCap.Rows[index].Cells["MaCanBo"].Value.ToString();
+                    cbPhuCap.Text= dgvDanhSachPhuCap.Rows[index].Cells["MaPhuCap"].Value.ToString();  
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Khong co Phu Cap Nay", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 		}
 	}
 }

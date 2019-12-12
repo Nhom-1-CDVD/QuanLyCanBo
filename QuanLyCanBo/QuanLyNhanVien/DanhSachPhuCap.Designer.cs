@@ -49,6 +49,7 @@ namespace QuanLyNhanVien
 			this.label4 = new System.Windows.Forms.Label();
 			this.txtSoTienPhuCap = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
+			this.btnThemPC = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhuCap)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -115,6 +116,7 @@ namespace QuanLyNhanVien
 			this.dgvDanhSachPhuCap.Name = "dgvDanhSachPhuCap";
 			this.dgvDanhSachPhuCap.Size = new System.Drawing.Size(688, 150);
 			this.dgvDanhSachPhuCap.TabIndex = 6;
+			this.dgvDanhSachPhuCap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDanhSachPhuCapCellClick);
 			// 
 			// label3
 			// 
@@ -161,11 +163,22 @@ namespace QuanLyNhanVien
 			this.label5.TabIndex = 11;
 			this.label5.Text = "So Tien Phu Cap";
 			// 
+			// btnThemPC
+			// 
+			this.btnThemPC.Location = new System.Drawing.Point(291, 63);
+			this.btnThemPC.Name = "btnThemPC";
+			this.btnThemPC.Size = new System.Drawing.Size(75, 23);
+			this.btnThemPC.TabIndex = 13;
+			this.btnThemPC.Text = "Them PC";
+			this.btnThemPC.UseVisualStyleBackColor = true;
+			this.btnThemPC.Click += new System.EventHandler(this.BtnThemPCClick);
+			// 
 			// DanhSachPhuCap
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(788, 262);
+			this.Controls.Add(this.btnThemPC);
 			this.Controls.Add(this.txtSoTienPhuCap);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.txtTenPhuCap);
@@ -186,6 +199,7 @@ namespace QuanLyNhanVien
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnThemPC;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtSoTienPhuCap;
 		private System.Windows.Forms.Label label4;

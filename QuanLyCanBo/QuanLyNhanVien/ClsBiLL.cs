@@ -122,5 +122,8 @@ namespace QuanLyNhanVien
         public bool XoaDSPC(string maCanBo, string maPhuCap){
         	return clsdal.XoaDSPC(maCanBo,maPhuCap);
         }
+        public bool updatePC(int  maPhuCap, string tenphucap, double soTienPhuCap){
+        	return clsdal.updatePhuCap(maPhuCap,tenphucap,soTienPhuCap);
+        }
     }
 }

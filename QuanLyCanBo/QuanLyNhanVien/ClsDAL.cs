@@ -463,18 +463,40 @@ namespace QuanLyNhanVien
             return true;
         }
         public bool XoaDSPC(string maCanBo, string maPhuCap){
-        	string sql = "DELETE From DanhSachCanBo Where MaCanBo='"+maCanBo+"' and MaPhuCap ='"maPhuCap+"'";
+        	string sql = "usp_Delete_DSCB";
         	try{
         	SqlConnection con = cndb.getConnect();
             con.Open();
             var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@MaCanBo", SqlDbType.NVarChar).Value = maCanBo;
+            cmd.Parameters.Add("@MaPhuCap", SqlDbType.NChar).Value = maPhuCap;
             cmd.ExecuteNonQuery();
             con.Close();
         	}
         	catch{
         		return false;
         	}
-        	return true
+        	return true;
+        }
+        
+        public bool UpdatePhuCap(int  maPhuCap, string tenphucap, double soTienPhuCap){
+        	string sql = "usp_Update_PhuCap";
+        	try{
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(" @tenphucap", SqlDbType.NVarChar).Value = tenphucap;
+            cmd.Parameters.Add("@maphucap", SqlDbType.NChar).Value = maPhuCap;
+            cmd.Parameters.Add("@sotienphucap", SqlDbType.Money).Value = soTienPhuCap;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        	}
+        	catch{
+        		return false;
+        	}
+        	return true;
         }
     }
 }

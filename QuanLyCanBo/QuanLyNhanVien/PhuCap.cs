@@ -80,7 +80,14 @@ namespace QuanLyNhanVien
 		
 		void BtnSuaClick(object sender, EventArgs e)
 		{
-						
+			if(clsill.updatePC(Int32.Parse(txtMaPhuCap.Text),txtTenPhuCap.Text,double.Parse(txtTienPhuCap.Text)))
+			{
+				MessageBox.Show("Chinh Sua Thanh Cong");
+				ShowPhuCap(dgvPhucap);
+			}
+			else{
+				MessageBox.Show("Khong co ma phu cap: "+ txtMaPhuCap.Text + " trong du lieu !");
+			}
 		}
 	}
 }

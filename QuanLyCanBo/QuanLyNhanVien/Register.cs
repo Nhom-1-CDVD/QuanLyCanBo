@@ -38,10 +38,15 @@ namespace QuanLyNhanVien
                 txtusername.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(txtusername.Text))
-            {
-                MessageBox.Show("Xin vui lòng chưa nhập vào Username:", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if(clsbill.checkUser(txtusername.Text)){
+            	MessageBox.Show("Username đã tồn tại :","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 txtusername.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtpassword.Text))
+            {
+                MessageBox.Show("Xin vui lòng chưa nhập vào password:", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtpassword.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txtphone.Text))

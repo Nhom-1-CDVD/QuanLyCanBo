@@ -132,5 +132,8 @@ namespace QuanLyNhanVien
         public DataTable sapXepGiam(){
         	return clsdal.sapXepGiam();
         }
+        public bool checkUser(string userName){
+        	return clsdal.CheckUser(userName);
+        }
     }
 }

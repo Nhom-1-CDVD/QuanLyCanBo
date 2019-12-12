@@ -523,5 +523,21 @@ namespace QuanLyNhanVien
             con.Close();
             return dt;
         }
+        
+        public bool CheckUser(string Username){
+        	string sql = "Select * from tbl_User where username = '" + Username+"'";
+            SqlConnection con = cndb.getConnect(); 
+                con.Open();
+                var cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.Text;
+                da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if(dt.Rows.Count>0)
+                {
+                    return true;
+                }    
+               return false;
+        }
     }
 }

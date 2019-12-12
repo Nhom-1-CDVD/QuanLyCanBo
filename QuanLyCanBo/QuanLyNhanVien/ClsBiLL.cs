@@ -141,5 +141,8 @@ namespace QuanLyNhanVien
         public bool checkDSPC(int maphucap, string macanbo){
         	return clsdal.CheckDSPC(maphucap, macanbo);
         }
+        public DataTable SapXepTangLuong(){
+        	return clsdal.SapXepTangLuong();
+        }
     }
 }

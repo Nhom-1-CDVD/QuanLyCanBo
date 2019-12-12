@@ -570,5 +570,19 @@ namespace QuanLyNhanVien
               }    
            	return false;
         }
+        
+        public DataTable SapXepTangLuong(){
+        	string sql = "SapXepTangLuong";
+        	SqlConnection con = cndb.getConnect(); 
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        
     }
 }

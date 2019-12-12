@@ -47,5 +47,12 @@ namespace QuanLyNhanVien
             DataTable dt = clsbill.XemTongLuong();
             dtgtracuu.DataSource = dt;
         }
+        
+        void BtnCancleClick(object sender, EventArgs e)
+        {
+        	this.Hide();
+        	MainForm fm = new MainForm();
+        	fm.Show();
+        }
     }
 }

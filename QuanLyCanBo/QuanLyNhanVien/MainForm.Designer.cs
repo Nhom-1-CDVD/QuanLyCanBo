@@ -62,12 +62,14 @@ namespace QuanLyNhanVien
 			this.quảnLýCánBộToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.quảnLýUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.traCuuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.quảnLýPhụCấpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.txttimkiem = new System.Windows.Forms.TextBox();
 			this.btnGiam = new System.Windows.Forms.Button();
 			this.btnTang = new System.Windows.Forms.Button();
-			this.quảnLýPhụCấpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.button1 = new System.Windows.Forms.Button();
+			this.label11 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -319,6 +321,13 @@ namespace QuanLyNhanVien
 			this.traCuuToolStripMenuItem.Text = "Tra Cứu";
 			this.traCuuToolStripMenuItem.Click += new System.EventHandler(this.traCuuToolStripMenuItem_Click);
 			// 
+			// quảnLýPhụCấpToolStripMenuItem
+			// 
+			this.quảnLýPhụCấpToolStripMenuItem.Name = "quảnLýPhụCấpToolStripMenuItem";
+			this.quảnLýPhụCấpToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+			this.quảnLýPhụCấpToolStripMenuItem.Text = "Quản Lý Phụ Cấp";
+			this.quảnLýPhụCấpToolStripMenuItem.Click += new System.EventHandler(this.QuảnLýPhụCấpToolStripMenuItemClick);
+			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.dgvnhanvien);
@@ -366,18 +375,32 @@ namespace QuanLyNhanVien
 			this.btnTang.UseVisualStyleBackColor = true;
 			this.btnTang.Click += new System.EventHandler(this.BtnTangClick);
 			// 
-			// quảnLýPhụCấpToolStripMenuItem
+			// button1
 			// 
-			this.quảnLýPhụCấpToolStripMenuItem.Name = "quảnLýPhụCấpToolStripMenuItem";
-			this.quảnLýPhụCấpToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
-			this.quảnLýPhụCấpToolStripMenuItem.Text = "Quản Lý Phụ Cấp";
-			this.quảnLýPhụCấpToolStripMenuItem.Click += new System.EventHandler(this.QuảnLýPhụCấpToolStripMenuItemClick);
+			this.button1.Location = new System.Drawing.Point(757, 206);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(73, 33);
+			this.button1.TabIndex = 35;
+			this.button1.Text = "Năm";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(485, 216);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(48, 13);
+			this.label11.TabIndex = 36;
+			this.label11.Text = "Sắp Xếp";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(882, 524);
+			this.Controls.Add(this.label11);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnGiam);
 			this.Controls.Add(this.btnTang);
 			this.Controls.Add(this.txttimkiem);
@@ -416,6 +439,8 @@ namespace QuanLyNhanVien
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.ToolStripMenuItem quảnLýPhụCấpToolStripMenuItem;
 		private System.Windows.Forms.Button btnTang;
 		private System.Windows.Forms.Button btnGiam;

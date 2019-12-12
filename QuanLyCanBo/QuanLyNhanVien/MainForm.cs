@@ -253,5 +253,12 @@ namespace QuanLyNhanVien
 			DanhSachPhuCap dspc = new DanhSachPhuCap();
 			dspc.Show();
 		}
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+			DataTable dt = clsbill.SapXepTangLuong();
+			dgvnhanvien.DataSource = dt;
+			dgvnhanvien.Refresh();			
+		}
 	}
 }

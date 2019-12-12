@@ -166,7 +166,7 @@ namespace QuanLyNhanVien
 			// 
 			// btnThemPC
 			// 
-			this.btnThemPC.Location = new System.Drawing.Point(291, 63);
+			this.btnThemPC.Location = new System.Drawing.Point(313, 63);
 			this.btnThemPC.Name = "btnThemPC";
 			this.btnThemPC.Size = new System.Drawing.Size(75, 23);
 			this.btnThemPC.TabIndex = 13;

@@ -89,5 +89,12 @@ namespace QuanLyNhanVien
 				MessageBox.Show("Khong co ma phu cap: "+ txtMaPhuCap.Text + " trong du lieu !");
 			}
 		}
+		
+		void BtnCancleClick(object sender, EventArgs e)
+		{
+			this.Hide();
+			DanhSachPhuCap dspc = new DanhSachPhuCap();
+			dspc.Show();
+		}
 	}
 }

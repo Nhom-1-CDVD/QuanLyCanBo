@@ -232,5 +232,19 @@ namespace QuanLyNhanVien
             TraCuu tc = new TraCuu();
             tc.Show();
         }
+		
+		void BtnTangClick(object sender, EventArgs e)
+		{
+			DataTable dt = clsbill.sapXepTang();
+			dgvnhanvien.DataSource = dt;
+			dgvnhanvien.Refresh();
+		}
+		
+		void BtnGiamClick(object sender, EventArgs e)
+		{
+			DataTable dt = clsbill.sapXepGiam();
+			dgvnhanvien.DataSource = dt;
+			dgvnhanvien.Refresh();
+		}
 	}
 }

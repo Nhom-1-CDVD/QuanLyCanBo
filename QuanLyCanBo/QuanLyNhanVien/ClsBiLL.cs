@@ -125,5 +125,12 @@ namespace QuanLyNhanVien
         public bool updatePC(int  maPhuCap, string tenphucap, double soTienPhuCap){
         	return clsdal.updatePhuCap(maPhuCap,tenphucap,soTienPhuCap);
         }
+        
+        public DataTable sapXepTang(){
+        	return clsdal.sapXepTang();
+        }
+        public DataTable sapXepGiam(){
+        	return clsdal.sapXepGiam();
+        }
     }
 }

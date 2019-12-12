@@ -498,5 +498,30 @@ namespace QuanLyNhanVien
         	}
         	return true;
         }
+        
+        public DataTable sapXepTang(){
+        	string sql = "usp_sapxep_Tang";
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public DataTable sapXepGiam(){
+        	string sql = "usp_sapxep_Giam";
+        	SqlConnection con = cndb.getConnect();
+            con.Open();
+            var cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
     }
 }

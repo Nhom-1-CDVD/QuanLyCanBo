@@ -46,6 +46,7 @@ namespace QuanLyNhanVien
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnSua = new System.Windows.Forms.Button();
 			this.btnXoa = new System.Windows.Forms.Button();
+			this.btnCancle = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvPhucap)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -55,7 +56,7 @@ namespace QuanLyNhanVien
 			this.btnThem.Name = "btnThem";
 			this.btnThem.Size = new System.Drawing.Size(75, 23);
 			this.btnThem.TabIndex = 0;
-			this.btnThem.Text = "Them";
+			this.btnThem.Text = "Thêm";
 			this.btnThem.UseVisualStyleBackColor = true;
 			this.btnThem.Click += new System.EventHandler(this.BtnThemClick);
 			// 
@@ -74,7 +75,7 @@ namespace QuanLyNhanVien
 			this.lbPhuCap.Name = "lbPhuCap";
 			this.lbPhuCap.Size = new System.Drawing.Size(100, 23);
 			this.lbPhuCap.TabIndex = 2;
-			this.lbPhuCap.Text = "Ma Phu Cap";
+			this.lbPhuCap.Text = "Mã Phụ Cấp";
 			// 
 			// txtMaPhuCap
 			// 
@@ -96,7 +97,7 @@ namespace QuanLyNhanVien
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(100, 23);
 			this.label1.TabIndex = 4;
-			this.label1.Text = "Ten Phu Cap";
+			this.label1.Text = "Tên Phụ Cấp";
 			// 
 			// txtTienPhuCap
 			// 
@@ -111,15 +112,15 @@ namespace QuanLyNhanVien
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 23);
 			this.label2.TabIndex = 6;
-			this.label2.Text = "So Tien Phu Cap";
+			this.label2.Text = "Số Tiền Phụ Cấp";
 			// 
 			// btnSua
 			// 
-			this.btnSua.Location = new System.Drawing.Point(445, 109);
+			this.btnSua.Location = new System.Drawing.Point(550, 32);
 			this.btnSua.Name = "btnSua";
 			this.btnSua.Size = new System.Drawing.Size(75, 23);
 			this.btnSua.TabIndex = 8;
-			this.btnSua.Text = "Sua";
+			this.btnSua.Text = "Sửa";
 			this.btnSua.UseVisualStyleBackColor = true;
 			this.btnSua.Click += new System.EventHandler(this.BtnSuaClick);
 			// 
@@ -129,15 +130,26 @@ namespace QuanLyNhanVien
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(75, 23);
 			this.btnXoa.TabIndex = 9;
-			this.btnXoa.Text = "Xoa";
+			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
 			this.btnXoa.Click += new System.EventHandler(this.BtnXoaClick);
+			// 
+			// btnCancle
+			// 
+			this.btnCancle.Location = new System.Drawing.Point(550, 69);
+			this.btnCancle.Name = "btnCancle";
+			this.btnCancle.Size = new System.Drawing.Size(75, 23);
+			this.btnCancle.TabIndex = 10;
+			this.btnCancle.Text = "Thoát";
+			this.btnCancle.UseVisualStyleBackColor = true;
+			this.btnCancle.Click += new System.EventHandler(this.BtnCancleClick);
 			// 
 			// PhuCap
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(666, 297);
+			this.Controls.Add(this.btnCancle);
 			this.Controls.Add(this.btnXoa);
 			this.Controls.Add(this.btnSua);
 			this.Controls.Add(this.txtTienPhuCap);
@@ -155,6 +167,7 @@ namespace QuanLyNhanVien
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnCancle;
 		private System.Windows.Forms.Button btnXoa;
 		private System.Windows.Forms.Button btnSua;
 		private System.Windows.Forms.Label label2;

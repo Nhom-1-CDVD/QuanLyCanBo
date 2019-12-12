@@ -136,5 +136,12 @@ namespace QuanLyNhanVien
 
             }
 		}
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			MainForm fm = new MainForm();
+			fm.Show();
+		}
 	}
 }

@@ -50,6 +50,7 @@ namespace QuanLyNhanVien
 			this.txtSoTienPhuCap = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnThemPC = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhuCap)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -59,7 +60,7 @@ namespace QuanLyNhanVien
 			this.btnThem.Name = "btnThem";
 			this.btnThem.Size = new System.Drawing.Size(75, 23);
 			this.btnThem.TabIndex = 0;
-			this.btnThem.Text = "Them";
+			this.btnThem.Text = "Thêm";
 			this.btnThem.UseVisualStyleBackColor = true;
 			this.btnThem.Click += new System.EventHandler(this.BtnThemClick);
 			// 
@@ -69,7 +70,7 @@ namespace QuanLyNhanVien
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(66, 23);
 			this.label1.TabIndex = 1;
-			this.label1.Text = "Ma Can Bo";
+			this.label1.Text = "Mã Cán Bộ";
 			// 
 			// cbCanBo
 			// 
@@ -97,7 +98,7 @@ namespace QuanLyNhanVien
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 23);
 			this.label2.TabIndex = 3;
-			this.label2.Text = "Phu Cap";
+			this.label2.Text = "Phụ Cấp";
 			// 
 			// btnXoa
 			// 
@@ -105,7 +106,7 @@ namespace QuanLyNhanVien
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(75, 23);
 			this.btnXoa.TabIndex = 5;
-			this.btnXoa.Text = "Xoa";
+			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
 			this.btnXoa.Click += new System.EventHandler(this.BtnXoaClick);
 			// 
@@ -124,7 +125,7 @@ namespace QuanLyNhanVien
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(75, 23);
 			this.label3.TabIndex = 7;
-			this.label3.Text = "Ten Can Bo";
+			this.label3.Text = "Tên Cán Bộ";
 			// 
 			// txtTenCanBo
 			// 
@@ -146,7 +147,7 @@ namespace QuanLyNhanVien
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(75, 23);
 			this.label4.TabIndex = 9;
-			this.label4.Text = "Ten Phu Cap";
+			this.label4.Text = "Tên Phụ Cấp";
 			// 
 			// txtSoTienPhuCap
 			// 
@@ -161,7 +162,7 @@ namespace QuanLyNhanVien
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(99, 23);
 			this.label5.TabIndex = 11;
-			this.label5.Text = "So Tien Phu Cap";
+			this.label5.Text = "Số Tiền Phụ Cấp";
 			// 
 			// btnThemPC
 			// 
@@ -169,15 +170,26 @@ namespace QuanLyNhanVien
 			this.btnThemPC.Name = "btnThemPC";
 			this.btnThemPC.Size = new System.Drawing.Size(75, 23);
 			this.btnThemPC.TabIndex = 13;
-			this.btnThemPC.Text = "Them PC";
+			this.btnThemPC.Text = "Thêm PC";
 			this.btnThemPC.UseVisualStyleBackColor = true;
 			this.btnThemPC.Click += new System.EventHandler(this.BtnThemPCClick);
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(592, 104);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 14;
+			this.button1.Text = "Thoát";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// DanhSachPhuCap
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(788, 262);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnThemPC);
 			this.Controls.Add(this.txtSoTienPhuCap);
 			this.Controls.Add(this.label5);
@@ -199,6 +211,7 @@ namespace QuanLyNhanVien
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btnThemPC;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtSoTienPhuCap;

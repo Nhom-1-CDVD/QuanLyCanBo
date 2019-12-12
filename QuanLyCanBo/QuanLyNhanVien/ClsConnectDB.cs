@@ -11,8 +11,8 @@ namespace QuanLyNhanVien
         string conStr;
         public ClsConnectDB()
         {
-            //conStr = @"Data Source=DESKTOP-9QR63V4\MQLDAI;Initial Catalog=QuanLyCanBo;Integrated Security=True";
-            conStr = @"Data Source=BLPCQPIBHEDH2LH;Initial Catalog=QuanLyCanBo;Integrated Security=True";
+            conStr = @"Data Source=DESKTOP-9QR63V4\MQLDAI;Initial Catalog=QuanLyCanBo;Integrated Security=True";
+            //conStr = @"Data Source=BLPCQPIBHEDH2LH;Initial Catalog=QuanLyCanBo;Integrated Security=True";
         }
 
         public SqlConnection getConnect()

@@ -54,5 +54,28 @@ namespace QuanLyNhanVien
         	MainForm fm = new MainForm();
         	fm.Show();
         }
+
+        private void cbgioitinh_TextChanged(object sender, EventArgs e)
+        {
+            cbChuyenMon.Text = "";
+            cbXepLoai.Text = "";
+        }
+
+        private void cbChuyenMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbChuyenMon_TextChanged(object sender, EventArgs e)
+        {
+            cbgioitinh.Text = "";
+            cbXepLoai.Text = "";
+        }
+
+        private void cbXepLoai_TextChanged(object sender, EventArgs e)
+        {
+            cbChuyenMon.Text = "";
+            cbgioitinh.Text = "";
+        }
     }
 }
